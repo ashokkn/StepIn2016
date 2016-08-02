@@ -8,6 +8,9 @@ from selenium import webdriver
 from sauceclient import SauceClient
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions
+import os
+
+os.linesep = '\r\n'
 
 USERNAME = 'samarr'
 ACCESS_KEY = '8ce86162-6393-4fa4-bdab-a89810ada58a'
@@ -73,11 +76,11 @@ class StepinSummit2016(unittest.TestCase):
         self.driver.find_element_by_id("tinymce-1").send_keys(blogContent)
         self.driver.find_element_by_xpath("//div[@id='primary']/div/div[2]/div[2]/div[2]/div/div[3]/div/button").click()
         self.driver.find_element_by_css_selector("a.notice__action > span").click()
+        f = open('blogTitles.txt', 'w')
+        f.write(blogTitle+'\n')
+        f.close()
         WebDriverWait(self.driver, 20).until(expected_conditions.title_contains(blogTitle))
         assert blogTitle in self.driver.title
-        #self.driver.close()
-        #self.driver.find_element_by_css_selector("img.gravatar").click()
-        #self.driver.find_element_by_xpath("(//button[@type='submit'])[2]").click()
     def tearDown(self):
         print("Link to your job: https://saucelabs.com/jobs/%s" % self.driver.session_id)
         try:
