@@ -3,7 +3,7 @@ language: python
 python:
     - "2.7"
 script:
-    - "py.test -n 5 saucetest.py"
+    - "py.test -n 5 WordPressCreateNewBlog.py"
 before_install:
     - "pip install sauceclient"
     - "pip install selenium"
