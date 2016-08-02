@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ffd3a877-034c-43f3-9dde-48f482f8c96c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WordPressCreateNewBlog.py" afterPath="$PROJECT_DIR$/WordPressCreateNewBlog.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WordPressDeletePost.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="StepIn2016.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,11 +26,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="WordPressCreateNewBlog.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="WordPressCreateNewBlog.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WordPressCreateNewBlog.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5055928" vertical-offset="1066" max-vertical-offset="1666">
-              <caret line="76" column="8" selection-start-line="76" selection-start-column="8" selection-end-line="76" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1066" max-vertical-offset="1666">
+              <caret line="68" column="60" selection-start-line="68" selection-start-column="60" selection-end-line="68" selection-end-column="60" />
+              <folding>
+                <element signature="e#28#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WordPressDeletePost.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/WordPressDeletePost.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.53243846" vertical-offset="2142" max-vertical-offset="2958">
+              <caret line="140" column="13" selection-start-line="140" selection-start-column="13" selection-end-line="140" selection-end-column="13" />
               <folding>
                 <element signature="e#28#41#0" expanded="true" />
               </folding>
@@ -63,6 +76,7 @@
         <option value="$PROJECT_DIR$/loginToWordPress.py" />
         <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/WordPressCreateNewBlog.py" />
+        <option value="$PROJECT_DIR$/WordPressDeletePost.py" />
       </list>
     </option>
   </component>
@@ -365,8 +379,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WordPressCreateNewBlog.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5055928" vertical-offset="1066" max-vertical-offset="1666">
-          <caret line="76" column="8" selection-start-line="76" selection-start-column="8" selection-end-line="76" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1066" max-vertical-offset="1666">
+          <caret line="68" column="60" selection-start-line="68" selection-start-column="60" selection-end-line="68" selection-end-column="60" />
+          <folding>
+            <element signature="e#28#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WordPressDeletePost.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.53243846" vertical-offset="2142" max-vertical-offset="2958">
+          <caret line="140" column="13" selection-start-line="140" selection-start-column="13" selection-end-line="140" selection-end-column="13" />
           <folding>
             <element signature="e#28#41#0" expanded="true" />
           </folding>
