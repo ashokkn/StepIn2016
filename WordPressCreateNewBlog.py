@@ -73,7 +73,7 @@ class StepinSummit2016(unittest.TestCase):
         self.driver.find_element_by_id("tinymce-1").send_keys(blogContent)
         self.driver.find_element_by_xpath("//div[@id='primary']/div/div[2]/div[2]/div[2]/div/div[3]/div/button").click()
         self.driver.find_element_by_css_selector("a.notice__action > span").click()
-        WebDriverWait(self.driver, 20).until(expected_conditions.tittle.contains(blogTitle))
+        WebDriverWait(self.driver, 20).until(expected_conditions.title_contains(blogTitle))
         assert blogTitle in self.driver.title
         #self.driver.close()
         #self.driver.find_element_by_css_selector("img.gravatar").click()
