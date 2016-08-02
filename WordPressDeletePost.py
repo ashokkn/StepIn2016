@@ -5,6 +5,9 @@ import new
 import unittest
 from selenium import webdriver
 from sauceclient import SauceClient
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.common.by import By
 
 USERNAME = 'samarr'
 ACCESS_KEY = '8ce86162-6393-4fa4-bdab-a89810ada58a'
@@ -52,20 +55,22 @@ class StepinSummit2016(unittest.TestCase):
         self.driver.find_element_by_id("user_pass").send_keys(wordpress_password)
         self.driver.find_element_by_id("wp-submit").click()
 
-        #WebDriverWait(self.driver, 20).until(expected_conditions.element_to_be_clickable((By.LINK_TEXT,'My Site')))
+        WebDriverWait(self.driver, 20).until(expected_conditions.element_to_be_clickable((By.LINK_TEXT,'My Site')))
         #print driver.title
 
         self.driver.find_element_by_link_text('My Site').click()
-        #WebDriverWait(driver, 20).until(expected_conditions.element_to_be_clickable((By.XPATH,"//span[contains(text(),'Blog Posts')]")))
-        #print driver.title
+        WebDriverWait(self.driver, 20).until(expected_conditions.element_to_be_clickable((By.XPATH,"//span[contains(text(),'Blog Posts')]")))
 
         self.driver.find_element_by_xpath("//span[contains(text(),'Blog Posts')]").click()
         searchURL ='https://wordpress.com/posts/stepinsamar.wordpress.com?s='+searchSring
 
         self.driver.get(searchURL)
-        #WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable((By.XPATH,".//*[@id='primary']/main/div[1]/div[2]/div[1]/article/div[2]/ul/li[4]/a/span")))
-        #print driver.title
+        WebDriverWait(self.driver, 20).until(expected_conditions.element_to_be_clickable((By.XPATH, ".//*[@id='primary']/main/div[1]/div[2]/div[1]/article/div[2]/ul/li[4]/a/span")))
         self.driver.find_element_by_xpath(".//*[@id='primary']/main/div[1]/div[2]/div[1]/article/div[2]/ul/li[4]/a/span").click()
+
+        WebDriverWait(self.driver, 20).until(expected_conditions.element_to_be_clickable((By.XPATH, "//span[contains(text(),'Moved to Trash')]")))
+        e = self.driver.find_element_by_xpath("//span[contains(text(),'Moved to Trash')]")
+        assert e.text == "Moved to Trash"
 
     def tearDown(self):
         print("Link to your job: https://saucelabs.com/jobs/%s" % self.driver.session_id)
