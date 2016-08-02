@@ -17,12 +17,21 @@ browsers = [{"platform": "Mac OS X 10.9",
              "version": "31"},
             {"platform": "Windows 8.1",
              "browserName": "internet explorer",
+             "version": "11"},
+            {"platform": "Windows 10",
+             "browserName": "firefox",
+             "version": "47"},
+            {"platform": "Windows 7",
+             "browserName": "internet explorer",
+             "version": "9"},
+            {"platform": "Windows 8.1",
+             "browserName": "internet explorer",
              "version": "11"}]
 wordpress_username = 'shariqmahmood21'
 wordpress_password = 'Chilly9959'
-blogTitle = 'MyNewBlogTitle' + str(random.randint(0, 999999))
-blogContent = 'This is the blog content' + str(random.randint(0, 999999))
-base_url='https://wordpress.com'
+blogTitle = None
+blogContent = None
+base_url='https://wordpress.com/wp-login.php'
 
 
 def on_platforms(platforms):
@@ -47,8 +56,10 @@ class StepinSummit2016(unittest.TestCase):
         self.driver.set_page_load_timeout(60)
         self.driver.implicitly_wait(60)
     def test_createblog(self):
+        blogTitle = 'MyNewBlogTitle' + str(random.randint(0, 999999))
+        blogContent = 'This is the blog content' + str(random.randint(0, 999999))
         self.driver.get(base_url)
-        self.driver.find_element_by_link_text("Sign In").click()
+        #self.driver.find_element_by_link_text("Sign In").click()
         self.driver.find_element_by_id("user_login").clear()
         self.driver.find_element_by_id("user_login").send_keys(wordpress_username)
         self.driver.find_element_by_id("user_pass").clear()
@@ -63,10 +74,10 @@ class StepinSummit2016(unittest.TestCase):
         self.driver.find_element_by_xpath("//div[@id='primary']/div/div[2]/div[2]/div[2]/div/div[3]/div/button").click()
         self.driver.find_element_by_css_selector("a.notice__action > span").click()
         WebDriverWait(self.driver, 20).until(expected_conditions.tittle.contains(blogTitle))
-        self.driver.implicitly_wait(20)
-        self.driver.close()
-        self.driver.find_element_by_css_selector("img.gravatar").click()
-        self.driver.find_element_by_xpath("(//button[@type='submit'])[2]").click()
+        assert blogTitle in self.driver.title
+        #self.driver.close()
+        #self.driver.find_element_by_css_selector("img.gravatar").click()
+        #self.driver.find_element_by_xpath("(//button[@type='submit'])[2]").click()
     def tearDown(self):
         print("Link to your job: https://saucelabs.com/jobs/%s" % self.driver.session_id)
         try:
