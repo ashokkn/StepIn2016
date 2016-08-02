@@ -1,0 +1,17 @@
+language: python
+python:
+    - "2.7"
+script:
+    - "py.test -n 5 saucetest.py"
+before_install:
+    - "pip install sauceclient"
+    - "pip install selenium"
+    - "pip install pytest-xdist"
+    - "pip install httplib2"
+    - "pip install oauth2client"
+    - "pip install google-api-python-client"
+    - "pip install mechanize"
+addons:
+  sauce_connect:
+    username: "samarr"
+    access_key: "8ce86162-6393-4fa4-bdab-a89810ada58a"
