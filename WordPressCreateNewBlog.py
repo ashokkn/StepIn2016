@@ -17,7 +17,19 @@ ACCESS_KEY = '8ce86162-6393-4fa4-bdab-a89810ada58a'
 sauce = SauceClient(USERNAME, ACCESS_KEY)
 browsers = [{"platform": "Mac OS X 10.9",
              "browserName": "chrome",
-             "version": "31"}]
+             "version": "31"},
+            {"platform": "Windows 8.1",
+             "browserName": "internet explorer",
+             "version": "11"},
+            {"platform": "Windows 10",
+             "browserName": "firefox",
+             "version": "47"},
+            {"platform": "Windows 7",
+             "browserName": "internet explorer",
+             "version": "9"},
+            {"platform": "Windows 8.1",
+             "browserName": "internet explorer",
+             "version": "11"}]
 wordpress_username = 'shariqmahmood21'
 wordpress_password = 'Chilly9959'
 blogTitle = None
