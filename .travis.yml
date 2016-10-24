@@ -1,4 +1,4 @@
-#travis configuration for CI
+#travis configuration for CI demo
 language: python
 python:
     - "2.7"
